@@ -418,3 +418,52 @@ body {
   // margin-bottom: 6px;
   margin: 0px auto 0px;
 }
+
+#post-content {
+  position: relative;
+
+
+  div.post-sharing-buttons {
+    position: absolute;
+    top: 12px;
+    right: -120px;
+  }
+
+  div.post-admin-box {
+    position: absolute;
+    top: 12px;
+    left: -120px;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-top: 60px;
+    font-weight: 700;
+  }
+
+  blockquote p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h6 {
+    /* This hack makes the H6 work for image captions */
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    font-style: italic;
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-weight: normal;
+    margin: 0;
+    display: block;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #777777;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

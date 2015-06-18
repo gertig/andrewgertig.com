@@ -1,6 +1,11 @@
-<h1>New post</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <h1>New post</h1>
 
-<%= render 'form' %>
+          <%= render 'form' %>
 
-<%= link_to 'Back', user_posts_path(@post.user) %>
-
+          <%= link_to 'Back', user_posts_path(@post.user) %>
+        </div>
+    </div>
+</div>

@@ -7,9 +7,11 @@
             <h2 class="post-title">
               <%= post.title %>
             </h2>
-            <h3 class="post-subtitle">
-                A post subtitle if it exists
-            </h3>
+
+            <% if !post.subtitle.nil? %>
+              <h3 class="post-subtitle">A post subtitle if it exists</h3>
+            <% end %>
+
           <% end %>
           <p class="post-meta">Posted by <%= post.user.name %> on <%= post.published_on %></p>
         </div>

@@ -30,32 +30,33 @@
   end
 %>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
 
-<section id="post-<%= @post.id %>">
-  <article class="post-container">
-    <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
-    
-    <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
-    
-    <h2 class="post-title"><%= @post.title %></h2>
-    
-    <span class="post-date"><%= @post.published_on %></span>
-  
-    
-    <div class="post-content">      
-      <% if @post.content %>
-        <%= markdown(@post.content).to_html.html_safe %>
-      <% end %>
+        <div class="row">
+            <div id="post-content" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+              <h1 class="post-title"><%= @post.title %></h1>
+              <span class="post-date"><%= @post.published_on %></span>
+
+              <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
+              <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
+
+
+              <% if @post.content %>
+                <%= markdown(@post.content).to_html.html_safe %>
+              <% end %>
+
+            </div>
+        </div>
     </div>
+</article>
 
-  </article>
-        
-</section>
+<hr>
 
-<div id="post-navigation"  class="clearfix" >
-  <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
-  <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
-</div>
+
+
 
 <div id="disqus_thread"></div>
 <%= render "disqus" if Rails.env.production? %>

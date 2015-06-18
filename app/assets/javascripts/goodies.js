@@ -4,14 +4,14 @@ $.fn.serializeObject = function() {
   $("form input, form select, form textarea").each( function(){
     values[this.name] = $(this).val();
   });
-  
+
   return values;
 }
 
 
 //DOM is Ready
 $(function(){
-  
+
   //PUSHDOWN MESSAGES
   if ($(".flashy").length) {
      $(".close_me").live("click", function(){
@@ -21,7 +21,7 @@ $(function(){
      $("div#messages").slideDown();
      $("div#messages").delay(5000).slideUp();
   }
-  
+
   $('#email-me').tooltip();
 });
 
@@ -36,9 +36,11 @@ $(function() {
         characters: document.getElementById('result__characters'),
         all: document.getElementById('result__all')
       };
-      
-  new Countable(countable_elem, countableUpdater);
-  
+
+  if (countable_elem) {
+    new Countable(countable_elem, countableUpdater);
+  }
+
   function countableUpdater(counter) {
     if ('textContent' in document.body) {
       results.paragraphs.textContent = counter.paragraphs;
@@ -52,9 +54,9 @@ $(function() {
       // results.all.textContent = counter.all
     }
   };
-  
-  
+
+
   // Cloudinary uploads via Attachinary
   // $('.attachinary-input').attachinary();
-  
+
 });

@@ -1,17 +1,33 @@
-<section class="post-edit-container">
-  <div class="post-edit-left-sidebar">
-    
-    <h4>Post Details</h4>
-    
-    <p><em><%= @post.published_on %></em></p>
-    <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
-  
-  </div>
+<%#
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-  <h2><%= @post.title %></h2>
+        </div>
+    </div>
+</div>
+%>
 
-  <%= render 'form' %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <section class="post-edit-container">
+            <div class="post-edit-left-sidebar">
 
-  <%= link_to 'Show', [@post.user, @post] %> |
-  <%= link_to 'Back', user_posts_path(@post.user) %>
-</section>
+              <h4>Post Details</h4>
+
+              <p><em><%= @post.published_on %></em></p>
+              <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
+
+            </div>
+
+            <h2><%= @post.title %></h2>
+
+            <%= render 'form' %>
+
+            <%= link_to 'Show', [@post.user, @post] %> |
+            <%= link_to 'Back', user_posts_path(@post.user) %>
+          </section>
+        </div>
+    </div>
+</div>

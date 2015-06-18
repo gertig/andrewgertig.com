@@ -1,0 +1,61 @@
+<% title @post.title %>
+<%# keywords %>
+<% description @post.description %>
+
+<%# Good stuff %>
+
+<%# Facebook Opengraph %>
+<%
+ opengraph do |graph|
+   graph.title "#{@post.title}"
+   graph.type 'article'
+   graph.url "#{request.url}"
+   graph.description @post.description
+   # graph.image "#{@post.header_image_url}"
+   graph.image "#{@post.image}"
+ end
+%>
+
+<%# Twitter Card %>
+<%
+  twitter_card('summary') do |card|
+    card.url "#{request.url}"
+    card.title "#{@post.title}"
+    card.description @post.description
+    card.image "#{@post.image}" do |image|
+      image.src "#{@post.image}"
+    end
+    card.creator "@gertig"
+    card.site "@gertig"
+  end
+%>
+
+
+<section id="post-<%= @post.id %>">
+  <article class="post-container">
+    <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
+    
+    <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
+    
+    <h2 class="post-title"><%= @post.title %></h2>
+    
+    <span class="post-date"><%= @post.published_on %></span>
+  
+    
+    <div class="post-content">      
+      <% if @post.content %>
+        <%= markdown(@post.content).to_html.html_safe %>
+      <% end %>
+    </div>
+
+  </article>
+        
+</section>
+
+<div id="post-navigation"  class="clearfix" >
+  <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
+  <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
+</div>
+
+<div id="disqus_thread"></div>
+<%= render "disqus" if Rails.env.production? %>
