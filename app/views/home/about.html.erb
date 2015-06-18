@@ -1,27 +1,29 @@
 <% title "About" %>
-<% keywords "Charlotte, About, Christian, Jamaica, Ruby on Rails, Air Force, Sales, Spine" %>
-<% description "Hi, I'm Andrew and I've been thinking about people, how we connect with each other and the things we use to try to make us happy, for a very long time." %>
+<% keywords "Charlotte, About, Christian, Jamaica, Ruby on Rails, Air Force, Sales, People, HR, Talent" %>
+<% description "Hi, I'm Andrew and I've been thinking about people, how we connect with each other, and the things we use to try to make us happy, for a very long time." %>
 
 <article id="about-me">
-  
-  <%= image_tag(asset_path("about-me.jpg")) %>
-  
+
 
   <p>Hi, I'm Andrew and I've been thinking about people, how we connect with each other and the things we use to try to make us happy, for a very long time.</p>
-  
-  <p>You can probably learn a good bit about me by Googling me since I have a unique name, only Andrew Gertig I know of so far. What you may not learn from Google that I do want you to know is that I care about people.  Sometimes I wonder if it's just natural to me or if its because of how much I know <%= link_to "Christ loves each of us", "http://www.biblegateway.com/passage/?search=2+Peter+3%3A9&version=NIV" %>. Other than that one main thing there are plenty of things I love to do, most of all spending time with my wife and kid(s)! As the great philosopher <%= link_to "Robin Scherbatsky", "http://en.wikipedia.org/wiki/Robin_Scherbatsky" %> once said "Every good relationship has a reacher and a settler." and I can assure you I'm the reacher.</p>
-  
+
+  <p>You can probably learn a good bit about me by Googling me since I have a unique name, only Andrew Gertig I know of so far. What you may not learn from Google that I do want you to know is that I care about people.</p>\
+
+  <p>
+    Other than that one main thing there are plenty of things I love to do, most of all spending time with my wife and kids! As the great philosopher <%= link_to "Robin Scherbatsky", "http://en.wikipedia.org/wiki/Robin_Scherbatsky" %> once said "Every good relationship has a reacher and a settler." and I can assure you I'm the reacher.
+  </p>
+
   <p>
     If you want to read some more you certainly can but I'm warning you it's just fluff from here on.
   </p>
-  
+
   <h3>Where I'm from</h3>
   <p>
     I lived in <%= link_to "Kingston, Jamaica", "http://goo.gl/maps/gurBC" %> until I was 16 years old, in fact I have Jamaican heritage that reaches back to the late 1800's.
     My dad is one of the coolest men alive today, he embodies so many of the traits that I seek to emulate as a father and as a man.
     My mom is an amazing woman, a super-carer, a fine-line-walker between letting her children figure things out on their own and being consumed with worry. I don't have very many childhood memories that are missing my mom.
   </p>
-  
+
   <h3>What got me to now</h3>
   <p>
     While growing up I always had an interest in how the world worked and in particular how humans could build such amazing things. I caught the computer bug in the late eighties which manifested itself in the form of cardboard computers with paper floppy disks. Thankfully my uncle is a geek and he got us a machine running Windows 3.1.1 in '93. How I wish I was cool enough to tell you the processor hertz and what the baud rate of the modem was, but I'm not (losing street cred as a geek quickly).
@@ -32,12 +34,16 @@
   </p>
 
   <p>
-    During college and the subsequent USAF time as an engineer I discovered that though I could do all the logic, analysis, design, you know the head work of it all, that being an engineer wasn't my passion.  I really enjoy people, I love building things, and I sometimes pretend not to but I love teaching. There I said it, I like teaching, though I frequently don't feel qualified to do so and worry I'm actually making things worse.
+    During college and the subsequent USAF time as an engineer I discovered that though I could do all the logic, analysis, design, you know the head work of it all, that being an engineer wasn't my passion. I really enjoy people, I love building things, and I sometimes pretend not to but I love teaching.
   </p>
 
-  <h3>Where I want to be next</h3>
   <p>
-    Right now I'm a <%= link_to "mini-expert in the world of spine surgery", "http://www.biomet.com/spine/" %>, where I "caddy" for surgeons in the OR and get to educate surgeons on my products. I'm currently working on a site with a good friend of mine (also named Andrew) for parents with younger children, its called <%= link_to "Humans With Kids", "http://humanswithkids.com" %>. Who knows what will be next, I sure don't but I am quite excited.
+    I look forward to getting to know more about you too. Find me on Twitter at <%= link_to "@gertig", "https://twitter.com/gertig" %>
   </p>
+
+
+  <%#= image_tag(asset_path("about-me.jpg"), class: "about-me-image") %>
+  <div id="about-me-image"></div>
+
 
 </article>

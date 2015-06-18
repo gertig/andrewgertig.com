@@ -5,124 +5,62 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <meta name="msvalidate.01" content="F944F9D72689C043BC830D8D73AD8940" />
-    
+
   <%= title :site => "Andrew Gertig", :separator => '-', :reverse => true %>
   <%= keywords :default => "ruby on rails, sales, design, medical devices, running, arduino" %>
   <%= description :default => "My claim to fame is that I graduated from high school twice. This is my personal blog and lab for trying new things." %>
-  
+
   <%# OPEN GRAPH %>
   <%= opengraph(:app_id => "#{FACEBOOK_APP_ID}") %>
   <meta property="fb:admins" content="511212544" />
-  
+
   <%# TWITTER CARD %>
   <%= twitter_card %>
-  
+
   <%# RSS FEED AUTODISCOVERY - this matches Wordpress's RSS feed url structure %>
   <%= auto_discovery_link_tag :atom, "/feed/rss" %>
   <%= auto_discovery_link_tag :rss, "/feed/rss.rss" %>
-  
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  
+
   <!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-  
+
   <!-- Javascripts
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <%= javascript_include_tag "application" %>
-  
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
-  
+
   <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Croissant+One|Codystar|Audiowide|Viga' rel='stylesheet' type='text/css'>
 
-  <!-- 
+  <!--
     font-family: 'Lora', serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Dancing Script', cursive;
     font-family: 'Open Sans Condensed', sans-serif;
   -->
-  
+
   <%= render "analytics" %>
-  
+
   <%#= cloudinary_js_config %>
-  
+
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
 </head>
 <body>
-  
+
   <%= render "facebook" %>
 
-  <header>
-    <div class="hero-image-wrapper hidden-xs">
-      <!-- <div class="actual-image" style="background-image: url('https://roon-media.s3.amazonaws.com/blogs/1097/0m3R2r2d2v1u423n1a0I2y293G2H0p0w/giant.jpg');"></div> -->
-      <div class="actual-image" style="background-image: url('http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png');"></div>
-      <!-- <img src="http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png" class=".img-responsive"> -->
-    </div>
-
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-      
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">Brand</a> -->
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-
-      </div>
-    </nav>
-  </header>
+  <%#= render "navbar" %>
 
   <div class="main-container">
-    
+
     <nav class="ag">
       <ul>
         <li><%= link_to "Archives", archives_path %></li>
@@ -139,35 +77,35 @@
     <%# DEVISE %>
     <p class="notice-CHANGE"><%= notice %></p>
     <p class="alert-CHANGE"><%= alert %></p>
-    
+
     <%= link_to root_url, id: "blog-title"  do %>
       <div id="avatar"></div>Andrew Gertig
     <% end %>
-    
+
     <%= yield %>
-    
+
     <div id="social-buttons" class="social">
       <%= link_to "http://twitter.com/gertig" do %>
         <%= image_tag(asset_path("twitter42.png")) %>
       <% end %>
-      
+
       <%= link_to "http://youtube.com/user/AndrewGertig" do %>
         <%= image_tag(asset_path("youtube42.png")) %>
       <% end %>
-      
+
       <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
         <%= image_tag(asset_path("google-plus42.png")) %>
       <% end %>
 
     </div>
-    
+
     <div id="projects">
-      <h3>Projects</h3>
+      <!-- <h3>Projects</h3> -->
       <ul>
         <li><%= link_to "RSS", feed_path %></li>
-        <li><%= link_to "Humans With Kids", "http://humanswithkids.com" %> - Where I write about being a dad</li>
-        <li><%= link_to "NormalRunner", "http://www.normalrunner.com" %> - How to become a runner, for normal people</li>
-        <li><%= link_to "ControllerFeed", "http://www.controllerfeed.com" %> - Arduino, Raspberry Pi, Tutorials, Videos, and Reviews</li>
+        <li><%= link_to "Humans With Kids", "http://humanswithkids.com" %></li>
+        <!-- <li><%#= link_to "NormalRunner", "http://www.normalrunner.com" %> - How to become a runner, for normal people</li> -->
+        <!-- <li><%#= link_to "ControllerFeed", "http://www.controllerfeed.com" %> - Arduino, Raspberry Pi, Tutorials, Videos, and Reviews</li> -->
       </ul>
     </div>
   </div> <!-- /container -->

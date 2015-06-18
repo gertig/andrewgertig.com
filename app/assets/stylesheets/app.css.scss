@@ -14,7 +14,7 @@ html {
 /*  background-image: url(/assets/grid.png); */
 }
 
-body { 
+body {
 /*  background-image: url(/assets/grid.png); */
 //  height: 100%;
 }
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* HERO IMAGE
 ====================== */
 .hero-image-wrapper {
-  @extend .container; 
+  @extend .container;
 
   position: relative;
   // width: 100%;
@@ -90,28 +90,28 @@ nav.ag ul {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  
+
   li {
     display: inline-block;
     margin-right: 20px;
     padding-top: 12px;
     border-top: 1px solid #445566;
   }
-  
+
   li a {
     color: #b4b4b4;
     // color: #2980B9;
-    
+
     &:hover {
       color: $purple;
     }
   }
-  
+
   li.admin-link {
     background: #85C4FF;
     padding-left: 10px;
     padding-right: 10px;
-    
+
     a { color: $black; }
   }
 
@@ -130,9 +130,9 @@ a#blog-title {
   line-height: 1.0em;
   font-family: 'Viga', 'Audiowide', 'Codystar', 'Croissant One','Alegreya', serif;
   // font-weight: 700;
-    
-  &:hover { 
-    text-decoration: none; 
+
+  &:hover {
+    text-decoration: none;
   }
 
   #avatar {
@@ -153,7 +153,22 @@ a#blog-title {
 
 }
 
-
+#about-me-image {
+  $size: 200px;
+  width: $size;
+  height: $size;
+  // float: left;
+  display: block;
+  background-image: image-url("avatar.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
+  background-position: -5px 0px;
+  background-repeat: no-repeat;
+  border: 2px solid #ddd;
+  border-radius: ($size / 2);
+  vertical-align: middle;
+  // margin-right: 10px;
+  // margin-bottom: 6px;
+  margin: 10px auto 40px;
+}
 
 /* SOCIAL BUTTONS
 ====================== */
@@ -161,7 +176,7 @@ a#blog-title {
   padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
-  
+
   a {
     margin: 8px;
     &:active, &:hover {
@@ -173,24 +188,24 @@ a#blog-title {
 /* ABOUT
 ====================== */
 article#about-me {
-  
+
   img {
     margin-bottom: 20px;
   }
-  
+
   // p {
   //   font-size: 18px;
   //   line-height: 26px;
   //   margin-bottom: 14px;
   // }
-  
+
 }
 
 /* FOOTER
 ====================== */
 #projects {
   margin-bottom: 40px;
-  
+
   ul { margin: 0; padding: 0;}
   ul, li {
     list-style: none;
