@@ -66,7 +66,7 @@
         <li><%= link_to "Archives", archives_path %></li>
         <li><%= link_to "Contact", "#", id: "email-me", title: "andrew.gertig at google's e-mail", data: { placement: "bottom", toggle: "tooltip" } %></li>
         <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Hire me", hire_me_path %></li>
+        <!-- <li><%#= link_to "Hire me", hire_me_path %></li> -->
         <% if is_andrew? %>
           <li class="admin-link"><%= link_to "Dashboard", admin_path %></li>
           <li class="admin-link"><%= link_to "Logout", destroy_user_session_path %></li>
@@ -93,9 +93,9 @@
         <%= image_tag(asset_path("youtube42.png")) %>
       <% end %>
 
-      <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
+      <!-- <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
         <%= image_tag(asset_path("google-plus42.png")) %>
-      <% end %>
+      <% end %> -->
 
     </div>
 
