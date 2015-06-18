@@ -1,22 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% @posts.each do |post| %>
+        <div class="post-preview">
+          <%= link_to blogpost_path(post) do %>
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+            <h3 class="post-subtitle">
+                A post subtitle if it exists
+            </h3>
+          <% end %>
+          <p class="post-meta">Posted by <%= post.user.name %> on <%= post.published_on %></p>
+        </div>
+        <hr>
 
-<% @posts.each do |post| %>
-     
-     <article class="post-container">
-         <h2 class="post-title">
-            <%= link_to post.title, blogpost_path(post) %>
-         </h2>
-         <span class="post-date"><%= post.published_on %></span>
+      <% end %>
 
-         <% if post.content %>
-           <%= markdown(post.content).to_html.html_safe %>
-         <% end %>
-     </article>
-
-<% end %>
-
-<div id="post-navigation" class="clearfix" >
-  <%= link_to "← Older Posts", archives_path, class: "previous-post" %>
-  <%#= link_to "← Previous Post", blogpost_path(@posts.last.previous), class: "previous-post" if @posts.last.previous %>
-  <%#= link_to "Next Post →",  blogpost_path(@posts.last.next), class: "next-post" if @post.next %>
-
+      <!-- Pager -->
+      <!-- <ul class="pager">
+          <li class="next">
+              <%= link_to "← Older Posts", archives_path, class: "previous-post" %>
+          </li>
+      </ul> -->
+    </div>
+  </div>
 </div>

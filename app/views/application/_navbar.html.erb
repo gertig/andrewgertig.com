@@ -1,63 +1,49 @@
-<header>
-  <div class="hero-image-wrapper hidden-xs">
-    <!-- <div class="actual-image" style="background-image: url('https://roon-media.s3.amazonaws.com/blogs/1097/0m3R2r2d2v1u423n1a0I2y293G2H0p0w/giant.jpg');"></div> -->
-    <div class="actual-image" style="background-image: url('http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png');"></div>
-    <!-- <img src="http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png" class=".img-responsive"> -->
-  </div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="index.html">Start Bootstrap</a> -->
+            <!-- <%= link_to root_url, id: "blog-title", class: "navbar-brand"  do %>
+              <div id="avatar"></div>Andrew Gertig
+            <% end %> -->
+        </div>
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- <a class="navbar-brand" href="#">Brand</a> -->
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <%= link_to "Home", root_url %>
+                </li>
+                <li>
+                    <%= link_to "About", about_path %>
+                </li>
+                <li>
+                  <%= link_to "Contact", "#", id: "email-me", title: "andrew.gertig at google's e-mail", data: { placement: "bottom", toggle: "tooltip" } %>
+                </li>
             </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </nav>
-</header>
+    <!-- /.container -->
+</nav>
+
+
+<!-- <nav class="ag">
+  <ul>
+    <li><%= link_to "Archives", archives_path %></li>
+    <li><%= link_to "Contact", "#", id: "email-me", title: "andrew.gertig at google's e-mail", data: { placement: "bottom", toggle: "tooltip" } %></li>
+    <li><%= link_to "About", about_path %></li>
+    <li><%#= link_to "Hire me", hire_me_path %></li>
+    <% if is_andrew? %>
+      <li class="admin-link"><%= link_to "Dashboard", admin_path %></li>
+      <li class="admin-link"><%= link_to "Logout", destroy_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav> -->

@@ -35,7 +35,9 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
 
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Croissant+One|Codystar|Audiowide|Viga' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Croissant+One|Codystar|Audiowide|Viga' rel='stylesheet' type='text/css'> -->
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!--
     font-family: 'Lora', serif;
@@ -57,34 +59,21 @@
 
   <%= render "facebook" %>
 
-  <%#= render "navbar" %>
+  <%= render "navbar" %>
+
+  <%= render "header" %>
 
   <div class="main-container">
-
-    <nav class="ag">
-      <ul>
-        <li><%= link_to "Archives", archives_path %></li>
-        <li><%= link_to "Contact", "#", id: "email-me", title: "andrew.gertig at google's e-mail", data: { placement: "bottom", toggle: "tooltip" } %></li>
-        <li><%= link_to "About", about_path %></li>
-        <!-- <li><%#= link_to "Hire me", hire_me_path %></li> -->
-        <% if is_andrew? %>
-          <li class="admin-link"><%= link_to "Dashboard", admin_path %></li>
-          <li class="admin-link"><%= link_to "Logout", destroy_user_session_path %></li>
-        <% end %>
-      </ul>
-    </nav>
 
     <%# DEVISE %>
     <p class="notice-CHANGE"><%= notice %></p>
     <p class="alert-CHANGE"><%= alert %></p>
 
-    <%= link_to root_url, id: "blog-title"  do %>
-      <div id="avatar"></div>Andrew Gertig
-    <% end %>
-
     <%= yield %>
 
-    <div id="social-buttons" class="social">
+    <%= render "footer" %>
+
+    <!-- <div id="social-buttons" class="social">
       <%= link_to "http://twitter.com/gertig" do %>
         <%= image_tag(asset_path("twitter42.png")) %>
       <% end %>
@@ -93,21 +82,18 @@
         <%= image_tag(asset_path("youtube42.png")) %>
       <% end %>
 
-      <!-- <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
+      <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
         <%= image_tag(asset_path("google-plus42.png")) %>
-      <% end %> -->
-
+      <% end %>
     </div>
 
     <div id="projects">
-      <!-- <h3>Projects</h3> -->
       <ul>
         <li><%= link_to "RSS", feed_path %></li>
         <li><%= link_to "Humans With Kids", "http://humanswithkids.com" %></li>
-        <!-- <li><%#= link_to "NormalRunner", "http://www.normalrunner.com" %> - How to become a runner, for normal people</li> -->
-        <!-- <li><%#= link_to "ControllerFeed", "http://www.controllerfeed.com" %> - Arduino, Raspberry Pi, Tutorials, Videos, and Reviews</li> -->
       </ul>
-    </div>
+    </div>  -->
+
   </div> <!-- /container -->
 
 </body>

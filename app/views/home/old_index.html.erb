@@ -1,0 +1,22 @@
+
+<% @posts.each do |post| %>
+     
+     <article class="post-container">
+         <h2 class="post-title">
+            <%= link_to post.title, blogpost_path(post) %>
+         </h2>
+         <span class="post-date"><%= post.published_on %></span>
+
+         <% if post.content %>
+           <%= markdown(post.content).to_html.html_safe %>
+         <% end %>
+     </article>
+
+<% end %>
+
+<div id="post-navigation" class="clearfix" >
+  <%= link_to "← Older Posts", archives_path, class: "previous-post" %>
+  <%#= link_to "← Previous Post", blogpost_path(@posts.last.previous), class: "previous-post" if @posts.last.previous %>
+  <%#= link_to "Next Post →",  blogpost_path(@posts.last.next), class: "next-post" if @post.next %>
+
+</div>

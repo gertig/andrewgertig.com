@@ -1,10 +1,10 @@
 /*
  WHEN USING BOURBON MIXINS
  1. Rename application.css to application.css.scss
- 2. Bourbon needs the sass files to be imported in a specific order to function properly. 
-Therefore, you will need to disable the require_tree sprocket directive. 
-Delete the following sprocket directive in application.css.scss: 
-  require_tree . 
+ 2. Bourbon needs the sass files to be imported in a specific order to function properly.
+Therefore, you will need to disable the require_tree sprocket directive.
+Delete the following sprocket directive in application.css.scss:
+  require_tree .
  3. Import all additional stylesheets from your app/assets/stylesheets directory underneath the bourbon import:
 */
 
@@ -12,16 +12,24 @@ Delete the following sprocket directive in application.css.scss:
 
 $navbar-default-bg:                #ffffff !default;
 
+$purple: #8562ef;
+$midnight: #2C3E50;
+$black: #333333;
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 @import "variables";
 
-@import "app";
-@import "posts";
-@import "dashboard";
+// @import "app";
+@import "blog";
+// @import "posts";
+// @import "dashboard";
 
 // Image Upload
 @import "jquery.fileupload-ui";
 @import "jquery.Jcrop";
 @import "pictures";
 @import "slimbox2";
-

@@ -1,19 +1,21 @@
-<section>
-  <% @posts.each do |post| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% @posts.each do |post| %>
+        <div class="post-preview">
+          <%= link_to blogpost_path(post) do %>
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+            <h3 class="post-subtitle">
+                A post subtitle if it exists
+            </h3>
+          <% end %>
+          <p class="post-meta">Posted by <%= post.user.name %> on <%= post.published_on %></p>
+        </div>
+        <hr>
 
-     <h2 class="archives-post-title">
-        <%= link_to post.title, blogpost_path(post) %>
-     </h2>
-   
-     <span class="archives-post-date">
-       <%= post.published_on %> | 
-     </span>
-     
-     <span class="disqus-counts">
-       <%= link_to "0 Comments", "#{blogpost_path(post)}#disqus_thread" %>
-     </span>
-
-  <% end %>
-</section>
-
-<%= render "disqus" if Rails.env.production? %>
+      <% end %>
+    </div>
+  </div>
+</div>

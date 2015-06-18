@@ -25,6 +25,7 @@
 //= require locale
 //= require main
 //= require slimbox2
+//= require bootstrap-sprockets
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 
