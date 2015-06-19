@@ -31,10 +31,14 @@ module ApplicationHelper
     if params[:controller] == "home"
       return ["#336699", "#996699", "#336600", "#8FB7EE", "#1C4754", "#61707D"].sample
     else
-      return "#336699"
+      return "#091827"
     end
 
   end
+
+  # def header_helper
+  #   render "header"
+  # end
 
 
 end

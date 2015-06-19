@@ -29,16 +29,17 @@
     <%#= f.label :title %>
     <div class="form-group">
       <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+      <%= f.text_field :subtitle, class: "form-control", placeholder: "Subtitle" %>
       <%#= f.label :content %>
       <%#= f.text_area :content, class: "input-block-level ag-post-editing-field", placeholder: "Body" %>
       <%= f.text_area :content, class: "form-control ag-post-editing-field", placeholder: "Body" %>
     </div>
 
-    
+
     <h4>Social and SEO</h4>
     <div class="form-group">
       <%= f.text_field :image_url_string, class: "form-control", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
-    
+
       <%= f.text_area :meta_description, rows: "4", class: "form-control", placeholder: "Meta Description for search results, FB, and Twitter Cards. 150 Characters." %>
     </div>
 
@@ -46,7 +47,7 @@
     <%= f.label :published, class: "checkbox" do %>
       <%= f.check_box :published %> Published
     <% end %>
-    
+
     <%= f.label :protect_slug, class: "checkbox" do %>
       <%= f.check_box :protect_slug %> Protect url slug from updates
     <% end %>
@@ -54,13 +55,12 @@
     <%= f.label :url_contains_date, class: "checkbox" do %>
       <%= f.check_box :url_contains_date %> Show published date in the url
     <% end %>
-    
-  
+
+
   <div class="form-actions">
     <%= f.submit class: "btn" %>
   </div>
-  
+
   <p><b>Tip:</b> when changing the published_at date so the url is correct for old Posts, change it from heroku console.</p>
   <p><em>Post.find(<%= @post.id %>).update_attribute(:published_at, '2011-05-15 00:00:00')</em></p>
 <% end %>
-

@@ -1,0 +1,19 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url(<%#= asset_url('home-bg2.png') %>);">
+  <div class="mocksy-pattern" style="background-color: <%= background_color_helper(params) %>;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                  <h1><%= @post.title %></h1>
+                  <% if !@post.subtitle.nil? %>
+                    <h2 class="subheading"><%= @post.subtitle %></h2>
+                  <% end %>
+                  <span class="meta">Posted by <%= @post.user.name %> on <%= @post.published_on %></span>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</header>

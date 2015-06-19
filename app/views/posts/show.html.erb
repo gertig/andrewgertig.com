@@ -37,8 +37,8 @@
         <div class="row">
             <div id="post-content" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-              <h1 class="post-title"><%= @post.title %></h1>
-              <span class="post-date"><%= @post.published_on %></span>
+              <!-- <h1 class="post-title"><%= @post.title %></h1> -->
+              <!-- <span class="post-date"><%= @post.published_on %></span> -->
 
               <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
               <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>

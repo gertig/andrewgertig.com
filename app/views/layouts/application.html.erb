@@ -61,17 +61,21 @@
 
   <%= render "navbar" %>
 
-  <%= render "header" %>
+  <% if params[:controller] == "posts" %>
+    <%= render "post_header", locals: { post: @post} %>
+  <% else %>
+    <%= render "header" %>
+  <% end %>
 
   <div class="main-container">
-
-    <%# DEVISE %>
-    <p class="notice-CHANGE"><%= notice %></p>
-    <p class="alert-CHANGE"><%= alert %></p>
 
     <%= yield %>
 
     <%= render "footer" %>
+
+    <%# DEVISE %>
+    <p class="notice-CHANGE"><%= notice %></p>
+    <p class="alert-CHANGE"><%= alert %></p>
 
     <!-- <div id="social-buttons" class="social">
       <%= link_to "http://twitter.com/gertig" do %>

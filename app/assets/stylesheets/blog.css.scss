@@ -70,7 +70,8 @@ hr.small {
   }
   .navbar-custom .navbar-brand {
     color: white;
-    padding: 20px;
+    // padding: 20px;
+    padding: 12px;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
@@ -409,7 +410,7 @@ body {
 }
 
 .overlay {
-  background:rgba(0,0,0,.4);
+  background: rgba(0,0,0,.4);
 }
 
 #about-image {
@@ -476,4 +477,78 @@ body {
     max-width: 100%;
     height: auto;
   }
+}
+
+/* POST EDIT SIDEBAR
+====================== */
+
+section.post-edit-container {
+  position: relative;
+}
+
+div.post-edit-left-sidebar {
+  position: absolute;
+  top: 92px;
+  left: -220px;
+  width: 200px;
+  background: #EFEFEF;
+  border: 1px solid #DDDDDD;
+  padding: 4px;
+  p {
+    font-size: 14px;
+    font-family: arial;
+  }
+}
+
+
+/* EDIT/NEW A POST
+====================== */
+form.ag-post-form {
+  position: relative;
+}
+
+textarea.ag-post-editing-field {
+  height: 800px;
+}
+
+div.post-edit-right-sidebar {
+  position: absolute;
+  // top: 80px;
+  right: -220px;
+  width: 200px;
+  // background: #EFEFEF;
+  // border: 1px solid #DDDDDD;
+}
+
+
+/* Word Count when editing
+=========================== */
+ul#word-count.result {
+
+  list-style-type: none;
+  border-radius: 5px;
+  margin: 0 0 10px;
+  padding: 1.5em;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  list-style: none;
+
+}
+
+
+#avatar {
+  $size: 40px;
+  width: $size;
+  height: $size;
+  // float: left;
+  display: inline-block;
+  background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
+  // background-position: -5px 0px;
+  background-repeat: no-repeat;
+  background-size: $size $size;
+  border: 1px solid #ddd;
+  border-radius: ($size / 2);
+  vertical-align: middle;
+  margin-right: 10px;
+  // margin-bottom: 6px;
 }

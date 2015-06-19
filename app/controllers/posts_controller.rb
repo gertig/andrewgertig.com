@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # GET users/1/posts
   # GET users/1/posts.json
-  
+
   before_filter :find_post, :only => :show
 
   def find_post
@@ -14,11 +14,11 @@ class PostsController < ApplicationController
         return redirect_to blogpost_path(@post), :status => :moved_permanently
       end
   end
-  
+
   def index
     # @user = User.friendly.find(params[:user_id])
     # @posts = @user.posts
-    
+
     @posts = Post.publisheds.order("published_at DESC")
 
     respond_to do |format|
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
       format.json { render :json => @posts }
     end
   end
-  
+
   def feed
     # this will be the name of the feed displayed on the feed reader
       @title = "AndrewGertig.com"
@@ -132,9 +132,9 @@ class PostsController < ApplicationController
   private
 
   def clean_params
-    params.require(:post).permit! #(:title, :content, :image_url_string, 
-                                 # :meta_description, :published, 
-                                 # :published_at, :slug, :protect_slug, :permalink_path, 
+    params.require(:post).permit! #(:title, :content, :image_url_string,
+                                 # :meta_description, :published,
+                                 # :published_at, :slug, :protect_slug, :permalink_path,
                                  # :users_attributes => [:id]
                                  #  )
 
