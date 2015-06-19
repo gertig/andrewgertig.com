@@ -16,7 +16,7 @@ module ApplicationHelper
 
     line
   end
-  
+
   def match_gist(line)
     line.match(/\{\{gist\s+(.*)\}\}/)
   end
@@ -25,6 +25,16 @@ module ApplicationHelper
     line.match(/^http.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)
   end
 
-  
-  
+
+  def background_color_helper(params)
+
+    if params[:controller] == "home"
+      return ["#336699", "#996699", "#336600", "#8FB7EE", "#1C4754", "#61707D"].sample
+    else
+      return "#336699"
+    end
+
+  end
+
+
 end

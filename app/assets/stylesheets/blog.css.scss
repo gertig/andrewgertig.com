@@ -398,6 +398,16 @@ body {
 /* ADDED BY ANDREW
 **************************/
 
+.mocksy-pattern {
+  $mocksy-color: #336699;
+  position: relative;
+  width: 100%;
+  background-color: $mocksy-color;
+  background-image: image-url("truchet@2x.png");
+  background-size: 50%;
+  margin-bottom: 40px;
+}
+
 .overlay {
   background:rgba(0,0,0,.4);
 }
