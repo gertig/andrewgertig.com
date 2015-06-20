@@ -15,6 +15,8 @@ Andrewgertig::Application.routes.draw do
   end
 
   resources :posts
+
+  get "/about", to: redirect('/pages/about')
   resources :pages
 
   devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -52,7 +54,6 @@ Andrewgertig::Application.routes.draw do
   get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
 
   # Pages
-  get "/about", to: redirect('/pages/about')
   get "hire-me" => "home#hire_me", :as => :hire_me
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives
