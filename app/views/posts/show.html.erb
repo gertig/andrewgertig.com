@@ -48,8 +48,10 @@
                 <%= markdown(@post.content).to_html.html_safe %>
               <% end %>
 
+              <%#= marathon_post_helper %>
+
               <div id="disqus_thread"></div>
-              <%= render "disqus" if Rails.env.production? %>
+              <%= render "disqus" if marathon_post_helper %>
 
             </div>
         </div>

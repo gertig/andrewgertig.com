@@ -36,9 +36,11 @@ module ApplicationHelper
 
   end
 
-  # def header_helper
-  #   render "header"
-  # end
+  def marathon_post_helper
+    # puts "*********** PARAMS ***********"
+    # puts params
+    params[:id].to_s == "2" || params[:id].to_s == "how-to-hack-a-marathon-if-you-arent-a-runner"
+  end
 
 
 end

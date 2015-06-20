@@ -17,6 +17,7 @@
               <h4>Post Details</h4>
 
               <p><em><%= @post.published_on %></em></p>
+              <p><em>ID: <%= @post.id %></em></p>
               <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
 
             </div>
