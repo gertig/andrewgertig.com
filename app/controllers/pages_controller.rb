@@ -1,13 +1,26 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_filter :find_page, :only => :show
+  before_action :set_page, only: [:edit, :update, :destroy]
+
+  def find_page
+    @page = Page.friendly.find(params[:id])
+
+    # If an old id or a numeric id was used to find the record, then
+    # the request path will not match the post_path, and we should do
+    # a 301 redirect that uses the current friendly_id.
+    if request.path != page_path_helper(@page) && @page.published?
+      return redirect_to page_path_helper(@page), :status => :moved_permanently
+    end
+  end
 
   # GET /pages
-  def index
-    @pages = Page.all
-  end
+  # def index
+  #   @pages = Page.all
+  # end
 
   # GET /pages/1
   def show
+    # @page = Page.friendly.find(params[:id])
   end
 
   # GET /pages/new

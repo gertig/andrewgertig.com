@@ -27,13 +27,11 @@ module ApplicationHelper
 
 
   def background_color_helper(params)
-
     if params[:controller] == "home"
       return ["#336699", "#996699", "#336600", "#8FB7EE", "#1C4754", "#61707D"].sample
     else
       return "#091827"
     end
-
   end
 
   # is the post the marathon post?

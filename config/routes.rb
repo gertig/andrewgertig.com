@@ -1,7 +1,5 @@
 Andrewgertig::Application.routes.draw do
 
-  resources :pages
-
   resources :galleries do
     resources :pictures do
       collection do
@@ -13,9 +11,11 @@ Andrewgertig::Application.routes.draw do
 
   resources :users do
     resources :posts
+    resources :pages
   end
 
   resources :posts
+  resources :pages
 
   devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -52,7 +52,7 @@ Andrewgertig::Application.routes.draw do
   get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
 
   # Pages
-  # get "about" => "home#about", :as => :about
+  get "about" => "pages#show", :as => :about
   get "hire-me" => "home#hire_me", :as => :hire_me
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives

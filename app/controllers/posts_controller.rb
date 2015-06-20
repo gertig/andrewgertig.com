@@ -48,10 +48,7 @@ class PostsController < ApplicationController
   # GET users/1/posts/1
   # GET users/1/posts/1.json
   def show
-    # @user = User.friendly.find(params[:user_id])
-    # @post = @user.posts.find(params[:id])
-    # @post = Post.find_by_slug(params[:id])
-    @post = Post.friendly.find(params[:id])
+    # @post is already being set in the find_post before_filter
     @user = @post.user
 
     respond_to do |format|
