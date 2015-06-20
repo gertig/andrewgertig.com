@@ -1,4 +1,11 @@
-<%= form_for(@page) do |f| %>
+<p><em>Words:</em> <strong><span id="result__words">0</span></strong>,   <em>Paragraphs:</em> <strong><span id="result__paragraphs">0</span></strong></p>
+
+<%= form_for([@page.user, @page], :html => { class: "ag-post-form" }) do |f| %>
+
+  <div class="post-edit-right-sidebar">
+    <%= f.submit class: "btn" %>
+  </div>
+
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -11,31 +18,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+
+    <%#= f.label :title %>
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+      <%= f.text_area :content, class: "form-control ag-post-editing-field", placeholder: "Body" %>
+    </div>
+
+
+    <h4>Social and SEO</h4>
+    <div class="form-group">
+      <%#= f.text_field :image_url_string, class: "form-control", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
+
+      <%= f.text_area :meta_description, rows: "4", class: "form-control", placeholder: "Meta Description for search results, FB, and Twitter Cards. 150 Characters." %>
+    </div>
+
+    <h4>Publishing options</h4>
+    <%= f.label :published, class: "checkbox" do %>
+      <%= f.check_box :published %> Published
+    <% end %>
+
+
+  <div class="form-actions">
+    <%= f.submit class: "btn" %>
   </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :published %><br>
-    <%= f.check_box :published %>
-  </div>
-  <div class="field">
-    <%= f.label :meta_description %><br>
-    <%= f.text_area :meta_description %>
-  </div>
-  <div class="field">
-    <%= f.label :published_at %><br>
-    <%= f.datetime_select :published_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <p><b>Tip:</b> when changing the published_at date so the url is correct for old Pages, change it from heroku console.</p>
+  <p><em>Page.find(<%= @page.id %>).update_attribute(:published_at, '2011-05-15 00:00:00')</em></p>
 <% end %>

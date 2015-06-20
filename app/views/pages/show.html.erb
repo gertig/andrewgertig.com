@@ -1,34 +1,57 @@
-<p id="notice"><%= notice %></p>
+<% title @page.title %>
+<%# keywords %>
+<% description @page.description %>
 
-<p>
-  <strong>User:</strong>
-  <%= @page.user %>
-</p>
+<%# Good stuff %>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @page.slug %>
-</p>
+<%# Facebook Opengraph %>
+<%
+ opengraph do |graph|
+   graph.title "#{@page.title}"
+   graph.type 'article'
+   graph.url "#{request.url}"
+   graph.description @page.description
+   # graph.image "#{@page.header_image_url}"
+  #  graph.image "#{@page.image}"
+ end
+%>
 
-<p>
-  <strong>Content:</strong>
-  <%= @page.content %>
-</p>
+<%# Twitter Card %>
+<%
+  twitter_card('summary') do |card|
+    card.url "#{request.url}"
+    card.title "#{@page.title}"
+    card.description @page.description
+    # card.image "#{@page.image}" do |image|
+    #   image.src "#{@page.image}"
+    # end
+    card.creator "@gertig"
+    card.site "@gertig"
+  end
+%>
 
-<p>
-  <strong>Published:</strong>
-  <%= @page.published %>
-</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
 
-<p>
-  <strong>Meta description:</strong>
-  <%= @page.meta_description %>
-</p>
+        <div class="row">
+            <div id="post-content" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<p>
-  <strong>Published at:</strong>
-  <%= @page.published_at %>
-</p>
+              <!-- <h1 class="post-title"><%#= @page.title %></h1> -->
+              <!-- <span class="post-date"><%#= @page.published_on %></span> -->
 
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+              <%#= render partial: "admin_box", locals: { post: @page } if is_andrew? %>
+              <!-- <div class="post-sharing-buttons"><%#= render partial: "sharing_buttons", locals: { post: @page } %></div> -->
+
+
+              <% if @page.content %>
+                <%= markdown(@page.content).to_html.html_safe %>
+              <% end %>
+
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>

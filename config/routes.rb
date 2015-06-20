@@ -52,7 +52,7 @@ Andrewgertig::Application.routes.draw do
   get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
 
   # Pages
-  get "about" => "pages#show", :as => :about
+  get "/about", to: redirect('/pages/about')
   get "hire-me" => "home#hire_me", :as => :hire_me
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives

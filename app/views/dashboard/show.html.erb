@@ -1,25 +1,49 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-          <%= link_to 'New Post', new_user_post_path(current_user.id), class: "btn" %>
+        <%= link_to 'New Page', new_user_page_path(current_user.id), class: "btn btn-success" %>
 
 
-          <table id="all-posts" class="table">
-           <% @posts.each do |post| %>
-             <tr class="<%= post.published? ? "published" : "private" %>">
-               <td>
-                 <%= link_to post.title, blogpost_path(post) %></br>
-                 <%= post.published_on %>
-               </td>
-               <td>
-                 <%= link_to "Edit", edit_user_post_path(current_user, post) %></br>
-                 <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-               </td>
-             </tr>
-           <% end %>
-          </table>
+        <table id="all-pages" class="table">
+         <% @pages.each do |page| %>
+           <tr class="<%= page.published? ? "published" : "private" %>">
+             <td>
+               <%= link_to page.title, page_path_helper(page) %></br>
+               <%= page.published_on %>
+             </td>
+             <td>
+               <%= link_to "Edit", edit_user_page_path(current_user, page) %></br>
+               <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
+             </td>
+           </tr>
+         <% end %>
+        </table>
 
-        </div>
-    </div>
-</div><!--/row-->
+      </div>
+  </div><!--/row-->
+
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <%= link_to 'New Post', new_user_post_path(current_user.id), class: "btn btn-success" %>
+
+
+        <table id="all-posts" class="table">
+         <% @posts.each do |post| %>
+           <tr class="<%= post.published? ? "published" : "private" %>">
+             <td>
+               <%= link_to post.title, blogpost_path(post) %></br>
+               <%= post.published_on %>
+             </td>
+             <td>
+               <%= link_to "Edit", edit_user_post_path(current_user, post) %></br>
+               <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+             </td>
+           </tr>
+         <% end %>
+        </table>
+
+      </div>
+  </div><!--/row-->
+</div>
