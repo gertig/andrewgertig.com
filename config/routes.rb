@@ -1,5 +1,7 @@
 Andrewgertig::Application.routes.draw do
 
+  resources :pages
+
   resources :galleries do
     resources :pictures do
       collection do
@@ -50,7 +52,7 @@ Andrewgertig::Application.routes.draw do
   get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
 
   # Pages
-  get "about" => "home#about", :as => :about
+  # get "about" => "home#about", :as => :about
   get "hire-me" => "home#hire_me", :as => :hire_me
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives
