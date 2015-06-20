@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
   # attr_accessible :email, :name, :role
-  
+
   # has_many :authentications, :dependent => :destroy
   has_many :posts, :dependent => :destroy
+  has_many :pages, :dependent => :destroy
 
   validates_uniqueness_of :name
-  
+
   # scope :authors, where(role: "author")
-  
+
   extend FriendlyId
   friendly_id :name, use: [:slugged]
 
@@ -22,14 +23,14 @@ class User < ActiveRecord::Base
   def self.authors
     where(role: "author")
   end
-  
+
   def omniauth_identity(auth)
     self.name = auth["info"]["name"]
-    self.email = auth["info"]["email"] if auth["info"]["email"] 
+    self.email = auth["info"]["email"] if auth["info"]["email"]
     self.role = "author"
-    
+
     authentications.build(
-        :provider => auth['provider'], 
+        :provider => auth['provider'],
         :uid => auth['uid'].to_s,
         :access_token => auth['credentials']['token']
         )

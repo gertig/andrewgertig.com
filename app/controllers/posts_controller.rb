@@ -124,7 +124,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_posts_url(@user) }
+      format.html { redirect_to dashboard_path }
       format.json { head :ok }
     end
   end
